@@ -2,7 +2,7 @@ import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import { AlertSuccess, ParentAdmin } from "../../components/Index";
 import { Box, Button, Flex, Icon, IconButton, Image, Table } from "@chakra-ui/react";
 import { Tooltip } from "@/components/ui/tooltip";
-import { getApiCars, handleEditCar, handleInputCar, removeCars, resetCarState, type dataEditCar } from "@/app/actions/handleCarSlice";
+import { getApiCars, handleInputCar, removeCars, resetCarState } from "@/app/actions/handleCarSlice";
 import { useEffect } from "react";
 import { FaTrashAlt, RiImageAddFill } from "../../utils/Icon";
 import { extractImageUrl } from "@/utils/extractImageUrl";
@@ -24,11 +24,6 @@ const CarsPageContent = () => {
     const alertRemoveCars = () => {
         dispatch(resetCarState());
         dispatch(getApiCars());
-    }
-
-    const editCar = (value: dataEditCar) => {
-        dispatch(handleInputCar(true));
-        dispatch(handleEditCar(value));
     }
 
     return (
@@ -95,23 +90,6 @@ const CarsPageContent = () => {
                                                 display={{ base: "grid", sm: "inline-flex" }}
                                                 gap={{ base: "1", sm: "3" }}
                                             >
-                                                {/* <Tooltip
-                                                    content="Edit Car"
-                                                    openDelay={100}
-                                                    closeDelay={0}
-                                                    contentProps={{ css: { bg: "blackAlpha.700" } }}
-                                                >
-                                                    <IconButton aria-label="Remove Car" type="button"
-                                                        size={{ base: "xs", sm: "sm", lg: "md" }}
-                                                        bg="yellow.500"
-                                                        _hover={{
-                                                            bg: "yellow.300"
-                                                        }}
-                                                        onClick={() => editCar(car)}
-                                                    >
-                                                        <FaEdit />
-                                                    </IconButton>
-                                                </Tooltip> */}
                                                 <Tooltip
                                                     content="Remove Car"
                                                     openDelay={100}
