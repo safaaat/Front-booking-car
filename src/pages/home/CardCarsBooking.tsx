@@ -3,7 +3,8 @@ import styles from "../../styles/index.module.scss";
 import TimeBookingCars from "@/components/TimeBookingCars";
 import { durationBooking } from "@/utils/currentmillis";
 import { extractImageUrl } from "@/utils/extractImageUrl";
-import { Badge, Box, Card, Grid, HStack, Image, Text } from "@chakra-ui/react";
+import { Badge, Box, Card, Flex, Grid, HStack, Image, Text } from "@chakra-ui/react";
+import ConfirmasiCarsEmpty from "@/components/ConfirmasiCarsEmpty";
 
 type CardCarsBookingProps = {
     bookingData: DataBookingProps[]
@@ -15,6 +16,13 @@ const CardCarsBooking = ({ bookingData }: CardCarsBookingProps) => {
         <>
             <section className={styles["section-global"]}>
                 <Grid templateColumns={{ base: "1fr", md: "1fr 1fr" }} gap={4}>
+                    {/* Jika tidak memiliki car, tampilkan ini */}
+                    {bookingData.length === 0 && (
+                        <Flex justify="center" w="full">
+                            <ConfirmasiCarsEmpty text="tidak ada mobil yang di booking." />
+                        </Flex>
+                    )}
+
                     {bookingData.map((data, index) => (
                         <Card.Root key={index} flexDirection={{ base: "column", lg: "row" }} overflow="hidden" width={{ base: "100%" }}>
                             <Image

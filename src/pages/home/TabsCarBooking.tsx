@@ -45,13 +45,11 @@ const TabsCarBooking = () => {
                     }}
                 >
                     <Tabs.Trigger
-                        color={activeTab === "car" ? "var(--color-primary)" : "blackAlpha.700"}
                         value="car">
                         <AiFillCar />
                         Mobil yang belom dibooking
                     </Tabs.Trigger>
                     <Tabs.Trigger
-                        color={activeTab === "car-booking" ? "var(--color-primary)" : "blackAlpha.700"}
                         value="car-booking"
                     >
                         <BiLock />

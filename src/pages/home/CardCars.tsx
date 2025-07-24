@@ -13,6 +13,7 @@ interface CardCarsProps {
 }
 
 const CardCars = ({ dataCars }: CardCarsProps) => {
+    const { dataCar } = useAppSelector((state) => state.handleCar);
     const { formBooking } = useAppSelector((state) => state.bookingCar);
     const dispatch = useAppDispatch();
     const [selectBooking, setSelectBooking] = useState<any>(null);
@@ -23,11 +24,19 @@ const CardCars = ({ dataCars }: CardCarsProps) => {
             {formBooking && <FormBooking car={selectBooking} />}
 
             <section className={styles["section-global"]}>
-                {dataCars.length === 0 && (
+                {/* Jika memiliki car, dan semua sudah di booking tampilkan ini */}
+                {dataCars.length === 0 && dataCar.length === 0 && (
+                    <Flex justify="center" w="full">
+                        <ConfirmasiCarsEmpty text="tidak memiliki car" />
+                    </Flex>
+                )}
+                {/* Jika tidak memiliki car, tampilkan ini */}
+                {dataCars.length === 0 && dataCar.length !== 0 && (
                     <Flex justify="center" w="full">
                         <ConfirmasiCarsEmpty text="semua mobil sudah di booking" />
                     </Flex>
                 )}
+
                 <div className={styles["card-wrapper"]}>
                     {dataCars.length !== 0 && (
                         dataCars.map((car) => (
