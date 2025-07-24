@@ -4,11 +4,11 @@ import { Box, Button, Flex, Icon, IconButton, Image, Table } from "@chakra-ui/re
 import { Tooltip } from "@/components/ui/tooltip";
 import { getApiCars, handleEditCar, handleInputCar, removeCars, resetCarState, type dataEditCar } from "@/app/actions/handleCarSlice";
 import { useEffect } from "react";
-import { FaTrashAlt, FaEdit, RiImageAddFill } from "../../utils/Icon";
+import { FaTrashAlt, RiImageAddFill } from "../../utils/Icon";
 import { extractImageUrl } from "@/utils/extractImageUrl";
 
 const CarsPageContent = () => {
-    const { dataCar, isLoading, isMessage, dataEditCar } = useAppSelector((state) => state.handleCar);
+    const { dataCar, isLoading, isMessage } = useAppSelector((state) => state.handleCar);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
