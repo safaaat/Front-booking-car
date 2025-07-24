@@ -1,70 +1,75 @@
-# React + TypeScript + Vite
+# 🏎️ Booking Car
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Frontend website untuk sistem pemesanan mobil, dibuat dengan **React.js + TypeScript + Vite + Sass + Chakra UI**.  
+Website ini memungkinkan pengguna untuk booking mobil **tanpa login** dan **tanpa pembayaran online**. Konfirmasi dilakukan manual oleh admin melalui telepon.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+### 👥 User Features
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- 🚗 **Book** mobil tanpa login
+- 📝 **Isi data diri**: nama, email, nomor HP
+- ❌ **Cegah duplikat booking** dengan nama & mobil yang sama
+- 🏠 **Halaman utama** menampilkan:
+  - Daftar mobil yang **tersedia**
+  - Daftar mobil yang **sudah dibooking (confirmed)**
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+---
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+### 🔧 Admin Features
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- ✅ **Konfirmasi** atau ❌ **tolak** booking secara manual
+- 📞 Hubungi user secara langsung via telepon
+- 🔁 **Batalkan otomatis** booking lain jika 1 sudah dikonfirmasi
+- 🗑️ **Hapus mobil** dari katalog
+- 🔍 Lihat detail booking:
+  - Nama
+  - Email
+  - Nomor telepon
+
+---
+
+## 🛠️ Tech Stack
+
+- ⚛️ React.js + TypeScript  
+- ⚡ Vite 
+- 🎨 SASS (SCSS)  
+- 💠 Chakra UI  
+- 📦 Redux Toolkit (State Management)  
+- 🔃 React Router DOM
+- 🌐 Axios (untuk HTTP request)
+- ☁️ Vercel (untuk deployment)
+
+---
+
+## 🧱 Struktur Proyek
+
+```bash
+src/
+├── app/           # State global (jika pakai Redux, Context, dsb)
+├── assets/        # Gambar, ikon, dll.
+├── components/    # Komponen UI reusable
+├── pages/         # Halaman utama aplikasi
+├── router/        # Routing (React Router)
+├── services/      # API call / handler
+├── styles/        # File SASS global dan partials
+├── utils/         # Fungsi utilitas/helper
+├── App.tsx        # Root component
+├── main.tsx       # Entry point aplikasi
+└── vite-env.d.ts  # Tipe deklarasi Vite
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Instalasi
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
-# booking-car
+
+---
+
+Kalau kamu juga butuh bagian untuk **deployment (Vercel)**, tinggal bilang aja.

@@ -24,11 +24,12 @@ const CarsPageContent = () => {
     const alertRemoveCars = () => {
         dispatch(resetCarState());
         dispatch(getApiCars());
+        dispatch(handleInputCar(false));
     }
 
     return (
         <>
-            {isMessage === "remove car success" && (
+            {isMessage === "Remove car success" && (
                 <AlertSuccess message={isMessage} onClose={alertRemoveCars} />
             )}
 

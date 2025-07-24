@@ -48,8 +48,6 @@ const InputCarForm = () => {
         dispatch(handleInputCar(false));
     }
 
-    console.log(carName)
-
     return (
         <>
             {/* Alert */}

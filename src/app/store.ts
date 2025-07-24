@@ -4,6 +4,7 @@ import { sidebarSlice } from './actions/sidebarSlice';
 import { handleCarSlice } from './actions/handleCarSlice';
 import { bookingSlice } from './actions/bookingSlice';
 import { adminSlice } from './actions/adminSlice';
+import { riwayatSlice } from './actions/riwayatSlice';
 
 export const store = configureStore({
     reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
         sidebar: sidebarSlice.reducer,
         handleCar: handleCarSlice.reducer,
         bookingCar: bookingSlice.reducer,
-        admin: adminSlice.reducer
+        admin: adminSlice.reducer,
+        riwayat: riwayatSlice.reducer
     },
 })
 
