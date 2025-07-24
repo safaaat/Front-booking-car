@@ -1,0 +1,133 @@
+@use "../../styles/responsive.scss" as *;
+
+.home-container {
+    width: 84rem;
+    margin: 0 auto;
+    background-color: white;
+
+    @include breakpoint-max(1400px) {
+        width: 100%;
+    }
+
+    .hero {
+        position: relative;
+        background-image: url('/image_car/Hero.png');
+        background-size: cover;
+        background-position: center calc(0% - 50px);
+        width: 100%;
+        height: 90vh;
+        overflow: hidden;
+        padding: 0 .5rem;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+            width: 100%;
+            height: 100%;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 5rem;
+            background: linear-gradient(to top,
+                    white 0%,
+                    rgba(255, 255, 255, 0.9) 10%,
+                    rgba(255, 255, 255, 0.8) 20%,
+                    rgba(255, 255, 255, 0.7) 30%,
+                    rgba(255, 255, 255, 0.6) 40%,
+                    rgba(255, 255, 255, 0.4) 50%,
+                    transparent 100%);
+        }
+
+
+        .content-wrapper {
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 2;
+            margin-top: -2rem;
+            text-align: center;
+
+            @include breakpoint-max(450px) {
+                padding: 0 .5rem;
+            }
+
+            h1 {
+                color: white;
+                font-size: 3rem;
+                font-family: 'Libre Baskerville', serif;
+                text-align: center;
+
+                @include breakpoint-max(768px) {
+                    font-size: 2.5rem;
+                }
+
+                @include breakpoint-max(450px) {
+                    font-size: 1.8rem;
+                }
+            }
+
+            h3 {
+                font-size: 1.3rem;
+                color: white;
+                margin-top: 1rem;
+                font-family: 'Inter', sans-serif;
+                text-align: center;
+
+                @include breakpoint-max(768px) {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+
+    .card-wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 1rem;
+        margin-top: 3rem;
+        margin-bottom: 2rem;
+
+        @include breakpoint-max(1300px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @include breakpoint-max(1100px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include breakpoint-max(700px) {
+            margin-top: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .car-name {
+            font-size: .8rem;
+            font-family: 'Libre Baskerville', serif;
+        }
+
+        .button-booking {
+            font-size: .7rem;
+            background-color: var(--color-gray);
+            color: white;
+            padding: .5rem .7rem;
+            border-radius: .3rem;
+            cursor: pointer;
+            font-weight: bold;
+
+            &:hover {
+                background-color: var(--color-primary);
+            }
+        }
+    }
+}

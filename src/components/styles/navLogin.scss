@@ -1,0 +1,85 @@
+@use "../../styles/global.scss";
+
+.container-nav-login {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 3;
+
+    .admin-menu {
+        background-color: var(--color-gray-medium);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: .5rem;
+        border-radius: .5rem;
+
+        .icon {
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .button-login {
+            margin-top: .5rem;
+            font-size: .9rem;
+            background-color: var(--color-gray-light);
+            padding: .2rem .5rem;
+            border-radius: .2rem;
+            cursor: pointer;
+
+            &:hover {
+                color: white;
+                background-color: var(--color-primary);
+            }
+        }
+
+        .button-logout {
+            margin-top: .5rem;
+            font-size: .9rem;
+            background-color: var(--color-gray-light);
+            padding: .2rem .5rem;
+            border-radius: .2rem;
+            cursor: pointer;
+
+            &:hover {
+                color: white;
+                background-color: red;
+            }
+        }
+    }
+
+    .button-wrapper {
+        display: flex;
+        justify-content: flex-end;
+
+        .button-login {
+            cursor: pointer;
+            background-color: var(--color-gray-medium);
+            color: white;
+            font-size: 2rem;
+            padding: .5rem .5rem;
+            border-radius: .5rem;
+
+            &:hover {
+                background-color: var(--color-primary);
+            }
+        }
+
+        .button-login:hover+span {
+            display: inline;
+        }
+
+        span {
+            display: none;
+            position: absolute;
+            bottom: -2.3rem; // sedikit turun dari tombol
+            right: 0;
+            padding: 0.3rem 0.5rem;
+            font-size: 0.7rem;
+            white-space: nowrap; // ← penting untuk mencegah teks memaksa turun baris
+            background-color: var(--tooltip-background);
+            border-radius: 4px;
+            color: white;
+        }
+    }
+}

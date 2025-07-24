@@ -1,0 +1,28 @@
+:root {
+    /* Sidebar */
+    --sidebar-bg: rgb(245, 245, 245);
+    --btn-color-sidebar: rgb(70, 70, 70);
+    --btn-color-hover-sidebar: rgb(225, 225, 225);
+    --btn-sidebar-resize: rgb(190, 190, 190);
+    --tooltip-background: rgb(114, 114, 114);
+    --size-big-sidebar: 250px;
+    --size-small-sidebar: 70px;
+
+    /* Color */
+    /* --color-primary:rgb(0, 238, 255); */
+    --color-primary: rgb(3, 213, 228);
+    --color-light-sky: rgb(230, 253, 255);
+    // Gray
+    --color-gray: rgb(51, 51, 51);
+    --color-gray-dark: #333333; // Gelap
+    --color-gray-medium: #888888; // Sedang
+    --color-gray-light: #dddddd; // Terang
+
+    /* Index */
+    --index-sidebar: 100000000;
+    --index-input-car: 110000000;
+    --index-loading-spinner: 120000000;
+
+    /* Transition */
+    --transition-sidebar: all 0.3s ease;
+}

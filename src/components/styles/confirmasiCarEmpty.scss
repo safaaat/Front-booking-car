@@ -1,0 +1,42 @@
+@use "../../styles/global.scss" as *;
+
+.confirmasi-cars-empty-container {
+    display: flex;
+    width: 100%;
+    min-height: 81vh;
+    justify-content: center;
+    align-items: center;
+
+    .confirmasi-cars-wrapper {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+
+        img {
+            width: 400px;
+
+            @include breakpoint-max(500px) {
+                width: 100%;
+            }
+        }
+
+        .contain-image {
+            text-align: center;
+
+            h5 {
+                color: var(--color-primary);
+                font-weight: bold;
+                font-size: 2rem;
+
+                @include breakpoint-max(320px) {
+                    font-size: 1.5rem;
+                }
+            }
+
+            p {
+                text-transform: capitalize;
+            }
+        }
+    }
+}

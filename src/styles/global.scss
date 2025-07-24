@@ -1,0 +1,12 @@
+// @use "./animasi.scss" as *;
+// @use "./variable.scss" as *;
+// @use "./responsive.scss" as *;
+
+@forward "./animasi.scss";
+@forward "./variable.scss";
+@forward "./responsive.scss";
+
+.section-global {
+    width: 90%;
+    margin: 0 auto;
+}

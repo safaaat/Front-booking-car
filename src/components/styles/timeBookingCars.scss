@@ -1,0 +1,47 @@
+@use "../../styles/global.scss" as *;
+
+.duration-container {
+    text-align: center;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+
+    h5 {
+        display: inline-flex;
+        color: black;
+        font-weight: bolder;
+    }
+
+    .years-months-days-wrapper {
+        display: inline-flex;
+        gap: .1rem;
+        margin-top: .2rem;
+        font-weight: 500;
+
+        .years-wrapper,
+        .months-wrapper,
+        .days-wrapper {
+            display: inline-flex;
+            gap: .2rem;
+        }
+    }
+
+    .hours-minutes-seconds-wrapper {
+        color: var(--color-primary);
+        display: inline-flex;
+        font-size: 3rem;
+        font-family: "Bitcount", system-ui;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: italic;
+        font-variation-settings:
+            "slnt" 0,
+            "CRSV" 0.5,
+            "ELSH" 0,
+            "ELXP" 0;
+
+        @include breakpoint-max(520px) {
+            font-size: 2.5rem;
+        }
+    }
+}
