@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { getApiCars } from "@/app/actions/handleCarSlice";
 import { FormLoginAdmin, NavLogin } from "../components/Index";
 import { getBookingCars } from "@/app/actions/bookingSlice";
-import { TabsCarBooking } from "./home/Index";
+// import { TabsCarBooking } from "./home/Index";
 import { getMe } from "@/app/actions/adminSlice";
 
 const Home = () => {
