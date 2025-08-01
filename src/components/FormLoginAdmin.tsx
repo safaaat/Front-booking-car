@@ -6,10 +6,12 @@ import { useEffect, useState } from "react";
 import { LoadingSpinner } from "./Index";
 
 const defaultValidasi = {
-    password: false
+    password: false,
+    email: false
 }
 
 const FormLoginAdmin = () => {
+    const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [validasi, setValidasi] = useState(defaultValidasi);
     const { isLoading, isMessage } = useAppSelector((state) => state.admin);
@@ -25,11 +27,13 @@ const FormLoginAdmin = () => {
         e.preventDefault();
 
         setValidasi(defaultValidasi)
-        if (password.length === 0) return handleValidasi({ password: true });
+        if (password.length === 0) handleValidasi({ password: true });
+        if (email.length === 0) handleValidasi({ email: true });
 
         const isValid = Object.values(validasi).every((val) => val === false);
         if (isValid) {
             const data = {
+                email,
                 password
             }
             dispatch(postLogin(data));
@@ -79,7 +83,17 @@ const FormLoginAdmin = () => {
                                 </Icon>
                             </Flex>
 
-                            <Field.Root invalid={validasi.password}>
+                            <Field.Root invalid={validasi.email}>
+                                <Field.Label color={validasi.email ? "red" : "black"}>Email</Field.Label>
+                                <Input
+                                    placeholder="Enter your email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                <Field.ErrorText>Email harus di isi</Field.ErrorText>
+                            </Field.Root>
+
+                            <Field.Root invalid={validasi.password} mt="3">
                                 <Field.Label color={validasi.password ? "red" : "black"}>Password</Field.Label>
                                 <Input
                                     type="password"

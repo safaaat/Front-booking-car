@@ -5,12 +5,14 @@ import { getApiCars } from "@/app/actions/handleCarSlice";
 import { FormLoginAdmin, NavLogin } from "../components/Index";
 import { getBookingCars } from "@/app/actions/bookingSlice";
 import { TabsCarBooking } from "./home/Index";
+import { getMe } from "@/app/actions/adminSlice";
 
 const Home = () => {
     const { formAdmin } = useAppSelector((state) => state.admin);
     const dispatch = useAppDispatch();
 
     useEffect(() => {
+        dispatch(getMe())
         dispatch(getApiCars())
         dispatch(getBookingCars())
     }, [])
@@ -32,7 +34,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                <TabsCarBooking />
+                {/* <TabsCarBooking /> */}
             </div>
         </>
     )
