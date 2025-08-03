@@ -48,10 +48,32 @@ export const getMe = createAsyncThunk("users/getMe",
 
             return response.data;
         } catch (error: any) {
+            if (error.code === "ERR_NETWORK") {
+                return rejectWithValue("Server tidak dapat dihubungi. Coba beberapa saat lagi.");
+            }
             return rejectWithValue(error.response?.data || error.message);
         }
     }
 );
+
+export const logout = createAsyncThunk("post/logout",
+    async (_, { rejectWithValue }) => {
+        try {
+            const response = await axiosInstance.post(
+                "/users/logout",
+                {}, // ⬅️ body (kosong)
+                {
+                    headers: { "Content-Type": "application/json" },
+                    withCredentials: true,
+                }
+            );
+            return response.data;
+        } catch (error: any) {
+            return rejectWithValue(error.response?.data || error.message);
+        }
+    }
+);
+
 
 export const adminSlice = createSlice({
     name: "name",
@@ -93,8 +115,8 @@ export const adminSlice = createSlice({
                 state.isLoading = false;
                 state.isSuccess = true;
                 state.isError = null;
-                state.isMessage = "Login Success";
-                state.dataAdmin = action.payload;
+                state.isMessage = action.payload.message;
+                state.dataAdmin = action.payload.data;
             })
             .addCase(postLogin.rejected, (state, action) => {
                 state.isLoading = false;
@@ -113,10 +135,29 @@ export const adminSlice = createSlice({
                 state.isLoading = false;
                 state.isSuccess = true;
                 state.isError = null;
-                state.isMessage = "Login Success";
-                state.dataAdmin = action.payload;
+                state.isMessage = action.payload.message;
+                state.dataAdmin = action.payload.data;
             })
             .addCase(getMe.rejected, (state, action) => {
+                state.isLoading = false;
+                state.isSuccess = false;
+                state.isError = action.payload as string;
+                state.isMessage = (action.payload as { message: string })?.message;
+            })
+
+            // Handle Get Me
+            .addCase(logout.pending, (state) => {
+                state.isLoading = true;
+                state.isSuccess = false;
+                state.isError = null;
+            })
+            .addCase(logout.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.isSuccess = true;
+                state.isError = null;
+                state.isMessage = action.payload.message;
+            })
+            .addCase(logout.rejected, (state, action) => {
                 state.isLoading = false;
                 state.isSuccess = false;
                 state.isError = action.payload as string;

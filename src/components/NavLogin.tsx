@@ -1,7 +1,7 @@
 import { useAppDispatch, useAppSelector } from "@/app/hooks";
 import styles from "../styles/index.module.scss";
 import { BiUserCircle } from "../utils/Icon";
-import { logoutAdmin, toggleLoginForm } from "@/app/actions/adminSlice";
+import { logout, toggleLoginForm } from "@/app/actions/adminSlice";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@chakra-ui/react";
 
@@ -26,7 +26,7 @@ const NavLogin = () => {
                         <button
                             type="button"
                             className={styles["button-logout"]}
-                            onClick={() => dispatch(logoutAdmin())}
+                            onClick={() => dispatch(logout())}
                         >
                             Logout
                         </button>
