@@ -1,0 +1,60 @@
+@use "../styles/font.scss" as *;
+@use "../styles/responsive.scss" as *;
+
+@mixin font-h1 {
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 90px;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+@mixin font-h2 {
+    font-size: 48px;
+    font-weight: 600;
+    font-family: "Montserrat Alternates", sans-serif;
+}
+
+@mixin font-sub-h1 {
+    font-size: 26px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+}
+
+@mixin tittle {
+    font-size: 10px;
+    font-family: "Montserrat", sans-serif;
+}
+
+@mixin button {
+    border-radius: 10px;
+    padding: 10px 15px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 20px;
+    font-weight: 600;
+    font-family: "Montserrat", sans-serif;
+    transition: all;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+@mixin spasing-x {
+    width: 90%;
+    margin: 0 auto;
+}
+
+@mixin container {
+    width: 84rem;
+    margin: 0 auto;
+
+    @include breakpoint-max(1440px) {
+        width: 100%;
+    }
+}
+
+@mixin hover-button {
+    transform: scale(1.2);
+    color: var(--color-pink);
+}
