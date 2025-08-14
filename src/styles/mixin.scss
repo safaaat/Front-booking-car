@@ -6,6 +6,43 @@
     font-weight: bold;
     line-height: 90px;
     font-family: "Montserrat Alternates", sans-serif;
+
+    @include breakpoint-max(1100px) {
+        font-size: 55px;
+        line-height: 85px;
+    }
+
+    @include breakpoint-max(900px) {
+        font-size: 45px;
+        line-height: 60px;
+    }
+
+    @include breakpoint-max(600px) {
+        font-size: 40px;
+        line-height: 50px;
+    }
+
+    @include breakpoint-max(450px) {
+        font-size: 36px;
+        line-height: 50px;
+    }
+
+    @include breakpoint-max(390px) {
+        font-size: 32px;
+    }
+
+    @include breakpoint-max(375px) {
+        font-size: 30px;
+    }
+
+    @include breakpoint-max(360px) {
+        font-size: 29px;
+    }
+
+    @include breakpoint-max(320px) {
+        font-size: 19px;
+        line-height: 35px;
+    }
 }
 
 @mixin font-h2 {
@@ -37,6 +74,25 @@
 
     &:hover {
         transform: scale(1.05);
+    }
+
+    @include breakpoint-max(1100px) {
+        font-size: 1rem;
+    }
+
+    @include breakpoint-max(600px) {
+        font-size: .9rem;
+        padding: 8px 13px;
+    }
+
+    @include breakpoint-max(450px) {
+        border-radius: 8px;
+    }
+
+    @include breakpoint-max(320px) {
+        border-radius: 6px;
+        font-size: .8rem;
+        padding: 7px 13px;
     }
 }
 

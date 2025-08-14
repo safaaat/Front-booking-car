@@ -5,58 +5,102 @@
 
     .hero {
         position: relative;
-        background-image: url("/image_car/Background_Hero.svg");
+        background-image: url("../../assets/Background_Image_Hero/Background_Hero.svg");
         background-size: cover;
         background-repeat: no-repeat;
         width: 100%;
-        height: 100vh;
+        height: 120vh;
         overflow: hidden;
         padding: 0 .5rem;
+
+        @include breakpoint-max(1100px) {
+            background-image: url("../../assets/Background_Image_Hero/Background_Car_1100.svg");
+            height: 100vh;
+        }
+
+        @include breakpoint-max(450px) {
+            background-image: url("../../assets/Background_Image_Hero/Background_Car_450.svg");
+        }
 
         &::before {
             content: "";
             position: absolute;
             right: 0;
             bottom: 0rem;
-            background-image: url("/image_car/Image_Car.svg");
+            background-image: url("../../assets/Background_Image_Hero/Image_Car.svg");
             background-size: cover;
             background-repeat: no-repeat;
             width: 60%;
-            height: 80%;
+            height: 67%;
+
+            @include breakpoint-max(1100px) {
+                width: 60%;
+                height: 62%;
+            }
+
+            @include breakpoint-max(1000px) {
+                width: 60%;
+                height: 58%;
+            }
+
+            @include breakpoint-max(840px) {
+                width: 60%;
+                height: 55%;
+            }
+
+            @include breakpoint-max(600px) {
+                width: 67%;
+                height: 40%;
+            }
+
+            @include breakpoint-max(500px) {
+                width: 70%;
+                height: 38%;
+            }
+
+            @include breakpoint-max(450px) {
+                width: 88%;
+                height: 40%;
+            }
+
+            @include breakpoint-max(390px) {
+                width: 80%;
+                height: 35%;
+                bottom: 2rem;
+            }
+
+            @include breakpoint-max(360px) {
+                bottom: .5rem;
+                width: 75%;
+                height: 33%;
+            }
+
+            @include breakpoint-max(320px) {
+                bottom: 1rem;
+                width: 80%;
+                height: 33%;
+            }
         }
-
-        // &::before {
-        //     content: "";
-        //     position: absolute;
-        //     top: 0;
-        //     left: 0;
-        //     background-color: rgba(0, 0, 0, 0.4);
-        //     width: 100%;
-        //     height: 100%;
-        // }
-
-        // &::after {
-        //     content: "";
-        //     position: absolute;
-        //     left: 0;
-        //     bottom: 0;
-        //     width: 100%;
-        //     height: 5rem;
-        //     background: linear-gradient(to top,
-        //             white 0%,
-        //             rgba(255, 255, 255, 0.9) 10%,
-        //             rgba(255, 255, 255, 0.8) 20%,
-        //             rgba(255, 255, 255, 0.7) 30%,
-        //             rgba(255, 255, 255, 0.6) 40%,
-        //             rgba(255, 255, 255, 0.4) 50%,
-        //             transparent 100%);
-        // }
-
 
         .content-wrapper {
             @include spasing-x;
             display: grid;
             gap: 25px;
+            padding-top: 3.5rem;
+            z-index: 1;
+            position: relative;
+
+            @include breakpoint-max(900px) {
+                padding-top: 5rem;
+            }
+
+            @include breakpoint-max(450px) {
+                padding-top: 20%;
+            }
+
+            @include breakpoint-max(320px) {
+                gap: 15px;
+            }
 
             h1 {
                 @include font-h1;
@@ -66,17 +110,27 @@
                 display: flex;
                 gap: 25px;
 
+                @include breakpoint-max(360px) {
+                    flex-direction: column;
+                    width: 60%;
+                    gap: 15px;
+                }
+
+                @include breakpoint-max(320px) {
+                    width: 70%;
+                }
+
                 .btn-cara-booking {
-                    @include button;
                     background-color: transparent;
                     border: 2px solid var(--color-pink);
                     color: var(--color-pink);
+                    @include button;
                 }
 
                 .btn-daftar-mobil {
-                    @include button;
                     background-color: var(--color-pink);
                     color: white;
+                    @include button;
                 }
             }
         }
