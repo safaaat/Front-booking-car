@@ -7,6 +7,15 @@ import { getBookingCars } from "@/app/actions/bookingSlice";
 // import { TabsCarBooking } from "./home/Index";
 import { getMe } from "@/app/actions/adminSlice";
 import Navbar from "@/feature/navbar/Navbar";
+import { gear } from "../assets/img/index";
+
+const FiturUnggulan = [
+    {
+        title: "praktis",
+        desc: "Menunjukkan bahwa proses booking mobil di website ini sangat mudah dan tidak ribet.",
+        icon: gear
+    }
+]
 
 const Home = () => {
     const { formAdmin } = useAppSelector((state) => state.admin);
@@ -24,10 +33,9 @@ const Home = () => {
             {formAdmin && <FormLoginAdmin />}
 
             <div className={styles["home-container"]}>
+                <Navbar />
 
-                <div className={styles["hero"]}>
-                    <Navbar />
-
+                <section className={styles["hero"]}>
                     <div className={styles["content-wrapper"]}>
                         <h1>
                             Rasakan Pengalamannya: <br />
@@ -50,9 +58,26 @@ const Home = () => {
                             </button>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nihil hic error illo tempora ad, dignissimos facilis dolorem at sint nulla, reprehenderit laborum nisi laudantium necessitatibus asperiores ea debitis ullam. Molestias nisi adipisci itaque sequi cum, tempore minima suscipit ab dolore, est fuga rerum voluptates tenetur voluptatum tempora deserunt quae molestiae numquam praesentium unde. Itaque, eum aperiam repellat natus nesciunt corporis numquam consectetur. Odit in voluptas, dolorum facilis iste modi maxime nemo adipisci, quaerat sapiente, rerum nostrum soluta dignissimos ea blanditiis delectus? Vero, cum sit dolores quidem in sint ipsa deleniti tempore est sunt similique animi adipisci provident et vel voluptatum?</p>
+                <section className={styles["Featured Features"]}>
+                    <h2>
+                        Temukan Mobil Terbaik, <br />
+                        Siap Jalan Kapan Saja
+                    </h2>
+
+                    <ul>
+                        {FiturUnggulan.map((event, index) => (
+                            <li key={index}>
+                                <img src={event.icon} alt={event.title} width={"67px"} />
+                                <div>
+                                    <h3>{event.title}</h3>
+                                    <p>{event.desc}</p>
+                                </div>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
 
                 {/* <TabsCarBooking /> */}
             </div>

@@ -17,9 +17,14 @@
         line-height: 60px;
     }
 
-    @include breakpoint-max(600px) {
-        font-size: 40px;
-        line-height: 50px;
+    @include breakpoint-max(750px) {
+        font-size: 42px;
+        line-height: 60px;
+    }
+
+    @include breakpoint-max(700px) {
+        font-size: 36px;
+        line-height: 60px;
     }
 
     @include breakpoint-max(450px) {
@@ -113,4 +118,8 @@
 @mixin hover-button {
     transform: scale(1.2);
     color: var(--color-pink);
+}
+
+@mixin img-list-5 {
+    width: 67px;
 }

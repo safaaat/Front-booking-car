@@ -1,9 +1,10 @@
 import styles from "../../styles/index.module.scss";
 import Logo from "../../assets/Logo.svg";
-import { Sun, User, SidebarResize, Home, DaftarCar, MethodBooking } from "../../assets/Icon_SVG/index";
+import { User, SidebarResize, Home, DaftarCar, MethodBooking } from "../../assets/Icon_SVG/index";
 import { Link } from "react-router-dom";
 import { TooltipButton } from "../../components/Index";
 import { useState } from "react";
+import Darkmode from "../darkmode/Darkmode";
 
 const listNav = [
     {
@@ -67,13 +68,8 @@ const Navbar = () => {
                                 <User className={styles["icon"]} />
                                 <TooltipButton name="Login" />
                             </button>
-                            <button
-                                type="button"
-                                aria-label="darkmode"
-                            >
-                                <Sun className={styles["icon"]} />
-                                <TooltipButton name="Dark mode" />
-                            </button>
+
+                            <Darkmode />
                         </div>
                     </div>
 
@@ -120,24 +116,6 @@ const Navbar = () => {
                                     </li>
                                 ))}
                             </ul>
-
-                            {/* Action Button */}
-                            {/* <div className={styles["btn-action-wrapper"]}>
-                            <button
-                                type="button"
-                                aria-label="login user"
-                            >
-                                <User className={styles["icon"]} />
-                                <TooltipButton name="Login" />
-                            </button>
-                            <button
-                                type="button"
-                                aria-label="darkmode"
-                            >
-                                <Sun className={styles["icon"]} />
-                                <TooltipButton name="Dark mode" />
-                            </button>
-                        </div> */}
                         </div>
                     )}
                 </nav>
