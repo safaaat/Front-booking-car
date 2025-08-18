@@ -79,6 +79,10 @@
         font-size: 22px;
     }
 
+    @include breakpoint-max(250px) {
+        font-size: 18px;
+    }
+
     @include breakpoint-max(162px) {
         font-size: 11px;
     }
@@ -106,9 +110,12 @@
         font-size: 1rem;
     }
 
+    @include breakpoint-max(200px) {
+        font-size: .9rem;
+    }
+
     @include breakpoint-max(162px) {
         font-size: 11px;
-        text-align: center;
     }
 }
 
@@ -124,8 +131,11 @@
         font-size: .8rem;
     }
 
+    @include breakpoint-max(200px) {
+        font-size: .7rem;
+    }
+
     @include breakpoint-max(162px) {
-        text-align: center;
         font-size: 9px;
     }
 }

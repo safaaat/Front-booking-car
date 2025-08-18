@@ -196,10 +196,6 @@
             @include spasing-y
         }
 
-        // @include breakpoint-max(700px) {
-        //     height: 1400px;
-        // }
-
         &::after {
             content: "";
             position: absolute;
@@ -239,6 +235,14 @@
 
             @include breakpoint-max(600px) {
                 top: 70px;
+            }
+
+            @include breakpoint-max(320px) {
+                top: 40px;
+            }
+
+            @include breakpoint-max(200px) {
+                top: 20px;
             }
 
             @include breakpoint-max(162px) {
@@ -355,7 +359,11 @@
                 }
 
                 @include breakpoint-max(320px) {
-                    margin-top: 210px;
+                    margin-top: 190px;
+                }
+
+                @include breakpoint-max(250px) {
+                    margin-top: 120px;
                 }
 
                 @include breakpoint-max(162px) {
@@ -377,7 +385,7 @@
                         gap: 35px;
                     }
 
-                    @include breakpoint-max(162px) {
+                    @include breakpoint-max(250px) {
                         gap: 20px;
                     }
 
@@ -386,9 +394,12 @@
                         align-items: center;
                         gap: 10px;
 
-                        @include breakpoint-max(162px) {
+                        @include breakpoint-max(500px) {
                             display: inline-flex;
                             flex-direction: column;
+                        }
+
+                        @include breakpoint-max(200px) {
                             gap: 10px;
                         }
 
@@ -401,6 +412,10 @@
                                 width: 50px;
                             }
 
+                            @include breakpoint-max(200px) {
+                                width: 40px;
+                            }
+
                             @include breakpoint-max(162px) {
                                 width: 30px;
                             }
@@ -411,10 +426,18 @@
 
                             h3 {
                                 @include font-h3;
+
+                                @include breakpoint-max(500px) {
+                                    text-align: center
+                                }
                             }
 
                             p {
                                 @include font-tittle;
+
+                                @include breakpoint-max(500px) {
+                                    text-align: center;
+                                }
                             }
                         }
                     }
