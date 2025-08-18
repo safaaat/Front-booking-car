@@ -3,7 +3,7 @@
 .home-container {
     @include container;
 
-    .hero {
+    .hero-section {
         position: relative;
         background-image: url("../../assets/Background_Image_Hero/Background_Hero.svg");
         background-size: cover;
@@ -143,44 +143,282 @@
                 }
             }
         }
+
+        .card-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+
+            @include breakpoint-max(1300px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            @include breakpoint-max(1100px) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @include breakpoint-max(700px) {
+                margin-top: 2rem;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .car-name {
+                font-size: .8rem;
+                font-family: 'Libre Baskerville', serif;
+            }
+
+            .button-booking {
+                font-size: .7rem;
+                background-color: var(--color-gray);
+                color: white;
+                padding: .5rem .7rem;
+                border-radius: .3rem;
+                cursor: pointer;
+                font-weight: bold;
+
+                &:hover {
+                    background-color: var(--color-primary);
+                }
+            }
+        }
     }
 
-    .card-wrapper {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 1rem;
-        margin-top: 3rem;
-        margin-bottom: 2rem;
-
-        @include breakpoint-max(1300px) {
-            grid-template-columns: repeat(4, 1fr);
-        }
+    .featured-features-section {
+        position: relative;
+        background-image: url("../../assets/Background_Featured_Features/Background.svg");
+        width: 100%;
+        height: 1024px;
 
         @include breakpoint-max(1100px) {
-            grid-template-columns: repeat(3, 1fr);
+            height: auto;
+            @include spasing-y
         }
 
-        @include breakpoint-max(700px) {
-            margin-top: 2rem;
-            grid-template-columns: repeat(2, 1fr);
+        // @include breakpoint-max(700px) {
+        //     height: 1400px;
+        // }
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 9rem;
+            left: 0;
+            background-image: url("../../assets/Background_Featured_Features/Image-Car.svg");
+            background-size: cover;
+            width: 35rem;
+            height: 64%;
+            z-index: 0;
+
+            @include breakpoint-max(1200px) {
+                width: 32rem;
+                height: 59%;
+            }
+
+            @include breakpoint-max(1100px) {
+                top: 7rem;
+                width: 26rem;
+                height: 29rem;
+            }
+
+            @include breakpoint-max(900px) {
+                width: 20rem;
+                height: 22.5rem;
+            }
+
+            @include breakpoint-max(700px) {
+                background-image: url("../../assets/Background_Featured_Features/Image-Car-700.svg");
+                width: 90%;
+                top: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            @include breakpoint-max(600px) {
+                top: 70px;
+            }
+
+            @include breakpoint-max(162px) {
+                top: 12px;
+            }
         }
 
-        .car-name {
-            font-size: .8rem;
-            font-family: 'Libre Baskerville', serif;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-image: url("../../assets/Background_Featured_Features/Background-Image-Car.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 38.5rem;
+            height: 90%;
+            z-index: 0;
+
+            @include breakpoint-max(1200px) {
+                width: 36rem;
+                height: 84.2%;
+            }
+
+            @include breakpoint-max(1100px) {
+                width: 28rem;
+                height: 41.8rem;
+            }
+
+            @include breakpoint-max(900px) {
+                width: 23rem;
+                height: 34.5rem;
+            }
+
+            @include breakpoint-max(700px) {
+                background-image: url("../../assets/Background_Featured_Features/Background-Image-Car-700.svg");
+                width: 100%;
+                background-size: contain;
+            }
         }
 
-        .button-booking {
-            font-size: .7rem;
-            background-color: var(--color-gray);
-            color: white;
-            padding: .5rem .7rem;
-            border-radius: .3rem;
-            cursor: pointer;
-            font-weight: bold;
+        .featured-features {
+            position: relative;
+            display: grid;
+            place-items: center;
+            grid-template-columns: 34rem 1fr;
+            height: 100%;
+            @include spasing-x;
 
-            &:hover {
-                background-color: var(--color-primary);
+            @include breakpoint-max(1300px) {
+                grid-template-columns: 35rem 1fr;
+            }
+
+            @include breakpoint-max(1200px) {
+                grid-template-columns: 33rem 1fr;
+            }
+
+            @include breakpoint-max(1100px) {
+                grid-template-columns: 26.5rem 1fr;
+            }
+
+            @include breakpoint-max(900px) {
+                grid-template-columns: 22rem 1fr;
+            }
+
+            @include breakpoint-max(768px) {
+                grid-template-columns: 21rem 1fr;
+            }
+
+            @include breakpoint-max(700px) {
+                grid-template-columns: none;
+                place-items: start;
+            }
+
+            .img-car {
+                @include breakpoint-max(700px) {
+                    display: none;
+                }
+            }
+
+            .content-featured {
+                position: relative;
+                z-index: 1;
+                display: grid;
+                gap: 80px;
+                text-shadow: 2px 2px 4px var(--shadow-text-featured-features);
+
+                @include breakpoint-max(1100px) {
+                    gap: 60px;
+                }
+
+                @include breakpoint-max(768px) {
+                    gap: 40px;
+                }
+
+                @include breakpoint-max(700px) {
+                    margin-top: 440px;
+                }
+
+                @include breakpoint-max(600px) {
+                    margin-top: 380px;
+                }
+
+                @include breakpoint-max(500px) {
+                    margin-top: 300px;
+                }
+
+                @include breakpoint-max(390px) {
+                    margin-top: 250px;
+                }
+
+                @include breakpoint-max(375px) {
+                    margin-top: 230px;
+                }
+
+                @include breakpoint-max(320px) {
+                    margin-top: 210px;
+                }
+
+                @include breakpoint-max(162px) {
+                    margin-top: 80px;
+                    gap: 20px;
+                }
+
+                h2 {
+                    text-align: center;
+
+                    @include font-h2
+                }
+
+                ul {
+                    display: grid;
+                    gap: 50px;
+
+                    @include breakpoint-max(1100px) {
+                        gap: 35px;
+                    }
+
+                    @include breakpoint-max(162px) {
+                        gap: 20px;
+                    }
+
+                    li {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+
+                        @include breakpoint-max(162px) {
+                            display: inline-flex;
+                            flex-direction: column;
+                            gap: 10px;
+                        }
+
+                        img {
+                            @include breakpoint-max(1100px) {
+                                width: 60px;
+                            }
+
+                            @include breakpoint-max(320px) {
+                                width: 50px;
+                            }
+
+                            @include breakpoint-max(162px) {
+                                width: 30px;
+                            }
+                        }
+
+                        .content-fitur-unggulan {
+                            display: grid;
+
+                            h3 {
+                                @include font-h3;
+                            }
+
+                            p {
+                                @include font-tittle;
+                            }
+                        }
+                    }
+                }
             }
         }
     }

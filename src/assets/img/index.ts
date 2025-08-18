@@ -1,3 +1,7 @@
-import gear from "./gears.svg";
+import Gear from "./gears.svg";
+import Cepat from "./cepat.svg";
+import Eye from "./Eye.svg";
+import Fleksible from "./Fleksibel.svg";
+import Book from "./Book.svg";
 
-export { gear }
+export { Gear, Cepat, Eye, Fleksible, Book }

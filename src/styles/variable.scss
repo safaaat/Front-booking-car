@@ -4,7 +4,6 @@
     --btn-color-sidebar: rgb(70, 70, 70);
     --btn-color-hover-sidebar: rgb(225, 225, 225);
     --btn-sidebar-resize: rgb(190, 190, 190);
-    --tooltip-background: rgb(114, 114, 114);
     --size-big-sidebar: 250px;
     --size-small-sidebar: 70px;
 
@@ -35,6 +34,7 @@
     --color-pink-30: rgb(223, 156, 254, 0.3);
 
     --color-gray: #D3D3D3;
+    --color-bg-tooltips: rgb(114, 114, 114);
 }
 
 .ada {
@@ -45,7 +45,10 @@
     --bg-color: #ffffff;
     --bg-nav: rgb(255, 255, 255, 0.8);
 
+    --shadow-text-featured-features: rgba(255, 255, 255, 0);
+
     --text-color: #000000;
+
 }
 
 :global(body.dark-mode) {
@@ -55,6 +58,8 @@
     /* ubah variable saat dark mode aktif */
     --bg-color: #121212;
     --bg-nav: rgb(18, 18, 18, 0.7);
+
+    --shadow-text-featured-features: black;
 
     --text-color: #ffffff;
 }

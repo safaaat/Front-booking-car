@@ -54,17 +54,80 @@
     font-size: 48px;
     font-weight: 600;
     font-family: "Montserrat Alternates", sans-serif;
+
+    @include breakpoint-max(1200px) {
+        font-size: 45px;
+    }
+
+    @include breakpoint-max(1100px) {
+        font-size: 35px;
+    }
+
+    @include breakpoint-max(900px) {
+        font-size: 31px;
+    }
+
+    @include breakpoint-max(768px) {
+        font-size: 27px;
+    }
+
+    @include breakpoint-max(375px) {
+        font-size: 25px;
+    }
+
+    @include breakpoint-max(320px) {
+        font-size: 22px;
+    }
+
+    @include breakpoint-max(162px) {
+        font-size: 11px;
+    }
 }
 
-@mixin font-sub-h1 {
+@mixin font-h3 {
     font-size: 26px;
     font-weight: 600;
+    text-transform: capitalize;
     font-family: "Montserrat", sans-serif;
+
+    @include breakpoint-max(1200px) {
+        font-size: 23px;
+    }
+
+    @include breakpoint-max(1100px) {
+        font-size: 20px;
+    }
+
+    @include breakpoint-max(768px) {
+        font-size: 18px;
+    }
+
+    @include breakpoint-max(320px) {
+        font-size: 1rem;
+    }
+
+    @include breakpoint-max(162px) {
+        font-size: 11px;
+        text-align: center;
+    }
 }
 
-@mixin tittle {
-    font-size: 10px;
+@mixin font-tittle {
+    font-size: 1rem;
     font-family: "Montserrat", sans-serif;
+
+    @include breakpoint-max(375px) {
+        font-size: .9rem;
+    }
+
+    @include breakpoint-max(320px) {
+        font-size: .8rem;
+    }
+
+    @include breakpoint-max(162px) {
+        text-align: center;
+        font-size: 9px;
+    }
 }
 
 @mixin button {
@@ -104,6 +167,10 @@
 @mixin spasing-x {
     width: 90%;
     margin: 0 auto;
+}
+
+@mixin spasing-y {
+    padding: 3rem 0;
 }
 
 @mixin container {
