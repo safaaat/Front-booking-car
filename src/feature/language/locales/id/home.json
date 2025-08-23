@@ -1,0 +1,51 @@
+{
+    "section-hero": {
+        "h1": {
+            "line1": "Rasakan Pengalamannya:",
+            "line2": "Booking Mobil Kini,",
+            "line3": "Praktis & Fleksibel"
+        },
+        "button": {
+            "btn1": "cara booking mobil",
+            "btn2": "daftar mobil"
+        }
+    },
+    "section-featured-features": {
+        "h2": {
+            "line1": "Temukan Mobil Terbaik,",
+            "line2": "Siap Jalan Kapan Saja"
+        },
+        "list": {
+            "array1": {
+                "title": "Praktis",
+                "desc": "Menunjukkan bahwa proses booking mobil di website ini sangat mudah dan tidak ribet."
+            },
+            "array2": {
+                "title": "Cepat",
+                "desc": "Proses pencarian dan booking mobil bisa dilakukan dalam hitungan detik."
+            },
+            "array3": {
+                "title": "Transparan",
+                "desc": "Informasi mobil dan status booking ditampilkan secara jujur & real-time."
+            },
+            "array4": {
+                "title": "Fleksibel",
+                "desc": "Pengguna bisa booking kapan saja, sesuai kebutuhan mereka."
+            },
+            "array5": {
+                "title": "Lengkap",
+                "desc": "Katalog mobil tersedia dengan informasi yang jelas dan gambar yang menarik."
+            }
+        }
+    },
+    "navbar": {
+        "btn1": "Beranda",
+        "btn2": "Daftar Mobil",
+        "btn3": "Cara Booking"
+    },
+    "tooltip": {
+        "login": "Masuk akun",
+        "darkmode": "Dark mode",
+        "language": "Bahasa"
+    }
+}

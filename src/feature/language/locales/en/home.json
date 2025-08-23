@@ -1,0 +1,51 @@
+{
+    "section-hero": {
+        "h1": {
+            "line1": "Feel the Experience:",
+            "line2": "Book a Mini Car,",
+            "line3": "Practical and Flexible"
+        },
+        "button": {
+            "btn1": "how to book a car",
+            "btn2": "available cars"
+        }
+    },
+    "section-featured-features": {
+        "h2": {
+            "line1": "Discover the Best Car,",
+            "line2": "Ready to Go Anytime"
+        },
+        "list": {
+            "array1": {
+                "title": "Practical",
+                "desc": "Shows that the car booking process on this website is very simple and hassle-free."
+            },
+            "array2": {
+                "title": "Fast",
+                "desc": "The process of searching and booking a car can be done in just seconds."
+            },
+            "array3": {
+                "title": "Transparent",
+                "desc": "Car information and booking status are displayed honestly & in real-time."
+            },
+            "array4": {
+                "title": "Flexible",
+                "desc": "Users can book anytime, according to their needs."
+            },
+            "array5": {
+                "title": "Comprehensive",
+                "desc": "The car catalog is available with clear information and attractive images."
+            }
+        }
+    },
+    "navbar": {
+        "btn1": "home",
+        "btn2": "car list",
+        "btn3": "How to Book"
+    },
+    "tooltip": {
+        "login": "Login",
+        "darkmode": "Dark mode",
+        "language": "Language"
+    }
+}

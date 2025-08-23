@@ -5,5 +5,6 @@ import SidebarResize from "./sidebar_resize.svg?react";
 import Home from "./Home.svg?react";
 import DaftarCar from "./Daftar_Car.svg?react";
 import MethodBooking from "./Method_Booking.svg?react";
+import Languages from "./Language.svg?react";
 
-export { Sun, User, SidebarResize, Home, DaftarCar, MethodBooking, Darkmode };
+export { Sun, User, SidebarResize, Home, DaftarCar, MethodBooking, Darkmode, Languages };

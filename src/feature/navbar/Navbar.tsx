@@ -5,18 +5,20 @@ import { Link } from "react-router-dom";
 import { TooltipButton } from "../../components/Index";
 import { useState } from "react";
 import Darkmode from "../darkmode/Darkmode";
+import Language from "../language/Language";
+import { useTranslation } from "react-i18next";
 
 const listNav = [
     {
-        name: "home",
+        name: "btn1",
         icon: Home
     },
     {
-        name: "daftar mobil",
+        name: "btn2",
         icon: DaftarCar
     },
     {
-        name: "cara booking",
+        name: "btn3",
         icon: MethodBooking
     },
 ];
@@ -24,6 +26,7 @@ const listNav = [
 const Navbar = () => {
     const [navbar, setNavbar] = useState(false);
     const [animasiEnd, setAnimasiEnd] = useState(false);
+    const { t } = useTranslation("home");
 
     return (
         <>
@@ -53,7 +56,7 @@ const Navbar = () => {
                             {listNav.map((data, index) => (
                                 <li key={index}>
                                     <Link to={"/"}>
-                                        {data.name}
+                                        {t(`navbar.${data.name}`)}
                                     </Link>
                                 </li>
                             ))}
@@ -61,15 +64,17 @@ const Navbar = () => {
 
                         {/* Action Button */}
                         <div className={styles["btn-action-wrapper"]}>
+                            <Language />
+
+                            <Darkmode />
+
                             <button
                                 type="button"
                                 aria-label="login user"
                             >
                                 <User className={styles["icon"]} />
-                                <TooltipButton name="Login" />
+                                <TooltipButton name={t(`tooltip.login`)} />
                             </button>
-
-                            <Darkmode />
                         </div>
                     </div>
 

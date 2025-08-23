@@ -8,36 +8,33 @@ import { getBookingCars } from "@/app/actions/bookingSlice";
 import { getMe } from "@/app/actions/adminSlice";
 import Navbar from "@/feature/navbar/Navbar";
 import { Gear, Book, Cepat, Eye, Fleksible } from "../assets/img/index";
+import { useTranslation } from "react-i18next";
 
 const FiturUnggulan = [
     {
-        title: "praktis",
-        desc: "Menunjukkan bahwa proses booking mobil di website ini sangat mudah dan tidak ribet.",
+        key: "array1",
         icon: Gear
     },
     {
-        title: "cepat",
-        desc: "Proses pencarian dan booking mobil bisa dilakukan dalam hitungan detik.",
+        key: "array2",
         icon: Cepat
     },
     {
-        title: "transparan",
-        desc: "Informasi mobil dan status booking ditampilkan secara jujur & real-time.",
+        key: "array3",
         icon: Eye
     },
     {
-        title: "fleksibel",
-        desc: "Pengguna bisa booking kapan saja, sesuai kebutuhan mereka.",
+        key: "array4",
         icon: Fleksible
     },
     {
-        title: "lengkap",
-        desc: "Katalog mobil tersedia dengan informasi yang jelas dan gambar yang menarik.",
+        key: "array5",
         icon: Book
     }
 ]
 
 const Home = () => {
+    const { t } = useTranslation("home");
     const { formAdmin } = useAppSelector((state) => state.admin);
     const dispatch = useAppDispatch();
 
@@ -56,26 +53,28 @@ const Home = () => {
                 <Navbar />
 
                 <section className={styles["hero-section"]}>
-                    <div className={styles["content-wrapper"]}>
-                        <h1>
-                            Rasakan Pengalamannya: <br />
-                            Booking Mobil Kini, <br />
-                            Praktis & Fleksibel
-                        </h1>
+                    <div className={styles["hero"]}>
+                        <div className={styles["content-wrapper"]}>
+                            <h1>
+                                {t("section-hero.h1.line1")} <br />
+                                {t("section-hero.h1.line2")} <br />
+                                {t("section-hero.h1.line3")}
+                            </h1>
 
-                        <div className={styles["button-wrapper"]}>
-                            <button
-                                type="button"
-                                className={styles["btn-cara-booking"]}
-                            >
-                                cara booking mobil
-                            </button>
-                            <button
-                                type="button"
-                                className={styles["btn-daftar-mobil"]}
-                            >
-                                daftar mobil
-                            </button>
+                            <div className={styles["button-wrapper"]}>
+                                <button
+                                    type="button"
+                                    className={styles["btn-cara-booking"]}
+                                >
+                                    {t("section-hero.button.btn1")}
+                                </button>
+                                <button
+                                    type="button"
+                                    className={styles["btn-daftar-mobil"]}
+                                >
+                                    {t("section-hero.button.btn2")}
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -86,17 +85,17 @@ const Home = () => {
 
                         <div className={styles["content-featured"]}>
                             <h2>
-                                Temukan Mobil Terbaik, <br />
-                                Siap Jalan Kapan Saja
+                                {t("section-featured-features.h2.line1")} <br />
+                                {t("section-featured-features.h2.line2")}
                             </h2>
 
                             <ul>
                                 {FiturUnggulan.map((event, index) => (
                                     <li key={index}>
-                                        <img src={event.icon} alt={event.title} width={"67px"} />
+                                        <img src={event.icon} width={"67px"} />
                                         <div className={styles["content-fitur-unggulan"]}>
-                                            <h3>{event.title}</h3>
-                                            <p>{event.desc}</p>
+                                            <h3>{t(`section-featured-features.list.${event.key}.title`)}</h3>
+                                            <p>{t(`section-featured-features.list.${event.key}.desc`)}</p>
                                         </div>
                                     </li>
                                 ))}

@@ -1,0 +1,54 @@
+@use "../../../styles/global.scss" as *;
+
+.language-wrapper {
+    position: relative;
+
+    button {
+        position: relative;
+    }
+
+    .overlay {
+
+
+        &::before {
+            content: "";
+            position: fixed;
+            left: 0;
+            top: 0;
+            background-color: transparent;
+            height: 100vh;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .button-wrapper {
+            display: grid;
+            position: absolute;
+            top: 2.6rem;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--bg-language);
+            z-index: 1;
+            padding: 5px 5px;
+            border-radius: .4rem;
+
+            button {
+                padding: .3rem 1rem;
+                text-align: center;
+                background-color: transparent;
+                font-size: .9rem;
+                border-radius: .4rem;
+                color: #fff;
+                text-transform: capitalize;
+
+                &.active {
+                    background-color: var(--color-pink);
+                }
+
+                &:hover {
+                    background-color: var(--color-pink-50);
+                }
+            }
+        }
+    }
+}

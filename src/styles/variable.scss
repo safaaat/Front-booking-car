@@ -44,6 +44,7 @@
 :global(:root) {
     --bg-color: #ffffff;
     --bg-nav: rgb(255, 255, 255, 0.8);
+    --bg-language: rgb(180, 180, 180);
 
     --shadow-text-featured-features: rgba(255, 255, 255, 0);
 
@@ -58,6 +59,7 @@
     /* ubah variable saat dark mode aktif */
     --bg-color: #121212;
     --bg-nav: rgb(18, 18, 18, 0.7);
+    --bg-language: rgb(130, 130, 130);
 
     --shadow-text-featured-features: black;
 

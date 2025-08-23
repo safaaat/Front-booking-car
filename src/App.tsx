@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home, Car, Booking, Riwayat } from "./pages/Index";
 import PrivateRouter from "./router/PrivateRouter";
 import { useAppSelector } from "./app/hooks";
+import "./feature/language/i18n";
 
 function App() {
   const { dataAdmin } = useAppSelector((state) => state.admin);

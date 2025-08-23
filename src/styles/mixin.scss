@@ -7,14 +7,14 @@
     line-height: 90px;
     font-family: "Montserrat Alternates", sans-serif;
 
-    @include breakpoint-max(1100px) {
+    @include breakpoint-max(1200px) {
         font-size: 55px;
-        line-height: 85px;
+        line-height: 80px;
     }
 
     @include breakpoint-max(900px) {
-        font-size: 45px;
-        line-height: 60px;
+        font-size: 55px;
+        line-height: 80px;
     }
 
     @include breakpoint-max(750px) {
@@ -47,6 +47,16 @@
     @include breakpoint-max(320px) {
         font-size: 19px;
         line-height: 35px;
+    }
+
+    @include breakpoint-width-height(900px, 900px) {
+        font-size: 55px;
+        line-height: 80px;
+    }
+
+    @include breakpoint-width-height(900px, 1010px) {
+        font-size: 60px;
+        line-height: 100px;
     }
 }
 
